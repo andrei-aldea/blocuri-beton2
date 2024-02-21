@@ -1,16 +1,25 @@
 ---
 import { Image } from 'astro:assets'
+import background from '../images/background.jpg'
 import ipad from '../images/ipad.png'
 import lego from '../images/lego.png'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title='Welcome to Astro.'>
-	<main class='py-12'>
-		<!-- <Image src={background} alt="Page Background."  /> -->
+	<main class='p-6'>
 		<section class='md:flex'>
-			<div>
-				<ul class='text-5xl md:text-7xl lg:text-8xl font-black'>
+			<div class='absolute -z-50 top-0 left-0 right-0 mt-16'>
+				<Image
+					src={background}
+					alt='Page Background.'
+					class='object-cover h-[600px] md:h-[800px]'
+				/>
+			</div>
+			<div
+				class='flex flex-col items-center text-center md:text-left md:items-start'
+			>
+				<ul class='text-5xl md:text-7xl lg:text-8xl font-black mt-20'>
 					<li>Simplu.</li>
 					<li>Adaptabil.</li>
 					<li>Functional.</li>
@@ -19,7 +28,7 @@ import Layout from '../layouts/Layout.astro'
 					Incearca blocurile <span class='font-bold'>interblocabile</span> de beton.
 				</div>
 
-				<button class='scale-125 translate-x-6'
+				<button class='scale-125 md:translate-x-6'
 					><svg
 						width='189'
 						height='40'
@@ -40,10 +49,11 @@ import Layout from '../layouts/Layout.astro'
 			</div>
 		</section>
 		<section
-			class='flex py-6 justify-between flex-col md:flex-row gap-6 items-center'
+			class='flex py-6 justify-between flex-col md:flex-row gap-6 items-center sm:my-10 md:m-0 space-y-10'
 		>
 			<div
-				class='rounded-2xl border-gray-200 border-8 border-opacity-70 shadow-lg md:max-w-max p-10 md:p-4 lg:p-10 flex flex-col items-center gap-2'
+				style='box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);'
+				class='rounded-2xl shadow-lg md:max-w-max p-10 md:p-4 lg:p-10 flex flex-col items-center gap-2 bg-white'
 			>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
@@ -158,7 +168,8 @@ import Layout from '../layouts/Layout.astro'
 				</div>
 			</div>
 			<div
-				class='rounded-2xl border-gray-200 border-8 border-opacity-70 shadow-lg md:max-w-max p-10 md:p-4 lg:p-10 flex flex-col items-center gap-2'
+				style='box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);'
+				class='rounded-2xl shadow-lg md:max-w-max p-10 md:p-4 lg:p-10 flex flex-col items-center gap-2 bg-white'
 			>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
@@ -185,7 +196,8 @@ import Layout from '../layouts/Layout.astro'
 				</div>
 			</div>
 			<div
-				class='rounded-2xl border-gray-200 border-8 border-opacity-70 shadow-lg md:max-w-max p-10 md:p-4 lg:p-10 flex flex-col items-center gap-2'
+				style='box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);'
+				class='rounded-2xl shadow-lg md:max-w-max p-10 md:p-4 lg:p-10 flex flex-col items-center gap-2 bg-white'
 			>
 				<span
 					><svg

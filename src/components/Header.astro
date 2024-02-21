@@ -1,14 +1,121 @@
-<header class='flex justify-between text-lg items-center'>
-	<span class='text-2xl'>BlocuriBeton</span>
-	<ul class='justify-between gap-4 uppercase hidden sm:flex'>
-		<li>acasa</li>
-		<li>galerie</li>
-		<li>contact</li>
-	</ul>
-	<div>
-		<ul class='hidden sm:flex'>
-			<li>toggle</li>
+<header
+	class='font-light text-lg w-full bg-neutral-900 text-white drop-shadow-md fixed top-0 left-0 right-0 px-12 py-4 z-10'
+>
+	<nav class='flex justify-between max-w-[1056px] mx-auto items-start'>
+		<div>
+			<a href='/'
+				><span class='text-3xl'
+					><span class='font-semibold'>Blocuri</span>Beton</span
+				></a
+			>
+			<ul class='justify-between space-y-6 py-6 uppercase hidden small-nav'>
+				<li>
+					<a
+						href='/acasa/'
+						class="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+						>acasa</a
+					>
+				</li>
+				<li>
+					<a
+						href='/galerie/'
+						class="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+						>galerie</a
+					>
+				</li>
+				<li>
+					<a
+						href='/contact/'
+						class="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+						>contact</a
+					>
+				</li>
+			</ul>
+		</div>
+
+		<ul class='justify-between gap-4 uppercase sm:flex hidden mt-2'>
+			<li>
+				<a
+					href='/acasa/'
+					class="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+					>acasa</a
+				>
+			</li>
+			<li>
+				<a
+					href='/galerie/'
+					class="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+					>galerie</a
+				>
+			</li>
+			<li>
+				<a
+					href='/contact/'
+					class="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+					>contact</a
+				>
+			</li>
 		</ul>
-	</div>
-	<div class='sm:hidden flex'></div>
+
+		<div class='hidden sm:flex mt-2'>theme</div>
+		<button
+			type='button'
+			class='nav-button relative z-10 block h-6 w-6 cursor-pointer transition-all duration-300 focus:outline-none sm:hidden mt-3'
+			><span class='hamburger-top'></span><span class='hamburger-middle'
+			></span><span class='hamburger-bottom'></span></button
+		>
+	</nav>
 </header>
+
+<script>
+	const navButton = document.querySelector('.nav-button')
+
+	const smallNav = document.querySelector('.small-nav')
+
+	navButton.addEventListener('click', () => {
+		smallNav.classList.toggle('hidden')
+		navButton.classList.toggle('open')
+	})
+
+	window.addEventListener('resize', function () {
+		if (window.matchMedia('(min-width: 640px)').matches) {
+			smallNav.classList.add('hidden')
+			navButton.classList.remove('open')
+		}
+	})
+</script>
+<style>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	.hamburger-top,
+	.hamburger-middle,
+	.hamburger-bottom {
+		@apply absolute top-0 left-0 h-0.5 w-6 rotate-0 bg-white duration-300;
+	}
+
+	.hamburger-middle {
+		@apply translate-y-[7px];
+	}
+
+	.hamburger-bottom {
+		@apply translate-y-[14px];
+	}
+
+	.open {
+		@apply rotate-90;
+	}
+
+	.open .hamburger-top {
+		transform: rotate(45deg) translateY(6px) translateX(6px);
+	}
+
+	.open .hamburger-middle {
+		@apply hidden;
+	}
+
+	.open .hamburger-bottom {
+		transform: rotate(-45deg) translateY(6px) translateX(-6px);
+	}
+</style>
