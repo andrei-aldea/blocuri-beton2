@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '../layouts/Layout.astro'
+import photo_1 from '../images/1.jpeg'
+import photo_2 from '../images/2.jpeg'
+import photo_3 from '../images/3.jpeg'
+import photo_4 from '../images/4.jpeg'
+import photo_5 from '../images/5.jpeg'
+import facebook from '../images/facebook.png'
+import messenger from '../images/messenger.png'
+import whatsapp from '../images/whatsapp.png'
+---
+
+<Layout title='Blocuri Beton | Galerie'>
+	<main class='pt-10 grid md:grid-cols-2 gap-6'>
+		<div class='bg-neutral-900 text-white p-10 rounded-2xl row-span-2 flex flex-col gap-6'>
+			<div>
+				<div class='text-3xl font-bold mb-2'>Cu ce te putem ajuta?</div>
+				<span class='font-extralight'
+					>Completeaza acest formular, iar noi te vom contacta in cel mai scurt timp posibil.</span
+				>
+			</div>
+			<hr class='opacity-20' />
+			<form
+				name='contact'
+				method='POST'
+				data-netlify='true'
+				onsubmit='submit'
+				class='rounded-lg flex flex-col items-start gap-4 min-w-full'
+			>
+				<input
+					class='rounded-lg px-4 py-3 text-black focus:outline-black min-w-full'
+					type='text'
+					name='name'
+					placeholder='Nume'
+				/>
+
+				<input
+					class='rounded-lg px-4 py-3 text-black focus:outline-black min-w-full'
+					type='email'
+					name='email'
+					placeholder='Email'
+				/>
+
+				<textarea
+					class='rounded-lg px-4 py-3 text-black focus:outline-black min-w-full h-36'
+					name='message'
+					placeholder='Mesajul dvs.'
+				></textarea>
+				<p class='text-center'>
+					<button
+						class='px-8 py-2 bg-[#CE8C64] rounded-lg font-medium text-lg transition-all duration-300 hover:scale-90 active:scale-90'
+						type='submit'
+						>Trimite formularul</button
+					>
+				</p>
+			</form>
+		</div>
+		<Image
+			src={photo_5}
+			alt='Example Image'
+			class='object-cover h-72 rounded-2xl'
+		/>
+		<div class='bg-neutral-900 text-white p-8 rounded-2xl space-y-4'>
+			<div
+				class='flex items-center gap-4 text-xl bg-neutral-800 p-4 rounded-xl transition-all duration-300 hover:scale-90 active:scale-90 cursor-pointer'
+			>
+				<Image
+					src={facebook}
+					alt='Facebook logo'
+					class='w-8'
+				/>Blocuri Beton
+			</div>
+			<div
+				class='flex items-center gap-4 text-xl bg-neutral-800 p-4 rounded-xl transition-all duration-300 hover:scale-90 active:scale-90 cursor-pointer'
+			>
+				<Image
+					src={messenger}
+					alt='Facebook logo'
+					class='w-8'
+				/>Blocuri Beton
+			</div>
+			<div
+				class='flex items-center gap-4 text-xl bg-neutral-800 p-4 rounded-xl transition-all duration-300 hover:scale-90 active:scale-90 cursor-pointer'
+			>
+				<Image
+					src={whatsapp}
+					alt='Facebook logo'
+					class='w-8'
+				/>+40 774 958 379
+			</div>
+		</div>
+	</main>
+</Layout>
