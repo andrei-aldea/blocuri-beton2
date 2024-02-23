@@ -11,17 +11,18 @@ import messenger from '../images/messenger.png'
 import whatsapp from '../images/whatsapp.png'
 ---
 
-<Layout title='Blocuri Beton | Galerie'>
-	<main class='pt-10 grid md:grid-cols-2 gap-6'>
+<Layout title='Blocuri Beton | Contact'>
+	<main class='pt-14 grid md:grid-cols-2 gap-6'>
 		<div class='bg-neutral-900 text-white p-10 rounded-2xl row-span-2 flex flex-col gap-6 order-last md:order-first'>
 			<div>
 				<div class='text-3xl font-bold mb-2'>Cu ce te putem ajuta?</div>
 				<span class='font-extralight'
-					>Completeaza acest formular, iar noi te vom contacta in cel mai scurt timp posibil.</span
+					>Completează acest formular, iar noi te vom contacta in cel mai scurt timp posibil.</span
 				>
 			</div>
 			<hr class='opacity-20' />
 			<form
+				id='form'
 				name='contact'
 				method='POST'
 				data-netlify='true'
@@ -62,7 +63,9 @@ import whatsapp from '../images/whatsapp.png'
 			class='object-cover h-72 rounded-2xl hidden md:block'
 		/>
 		<div class='bg-neutral-900 text-white p-8 rounded-2xl space-y-4 order-first md:order-last'>
-			<div
+			<a
+				href='https://www.facebook.com/profile.php?id=100087477765366'
+				target='_blank'
 				class='flex items-center gap-4 text-xl bg-neutral-800 p-4 rounded-xl transition-all duration-300 hover:scale-90 active:scale-90 cursor-pointer'
 			>
 				<Image
@@ -70,8 +73,10 @@ import whatsapp from '../images/whatsapp.png'
 					alt='Facebook logo'
 					class='w-8'
 				/>Blocuri Beton
-			</div>
-			<div
+			</a>
+			<a
+				href='https://www.m.me/blocuribeton'
+				target='_blank'
 				class='flex items-center gap-4 text-xl bg-neutral-800 p-4 rounded-xl transition-all duration-300 hover:scale-90 active:scale-90 cursor-pointer'
 			>
 				<Image
@@ -79,8 +84,11 @@ import whatsapp from '../images/whatsapp.png'
 					alt='Facebook logo'
 					class='w-8'
 				/>Blocuri Beton
-			</div>
-			<div
+			</a>
+
+			<a
+				href='https://wa.me/774958379'
+				target='_blank'
 				class='flex items-center gap-4 text-xl bg-neutral-800 p-4 rounded-xl transition-all duration-300 hover:scale-90 active:scale-90 cursor-pointer'
 			>
 				<Image
@@ -88,7 +96,7 @@ import whatsapp from '../images/whatsapp.png'
 					alt='Facebook logo'
 					class='w-8'
 				/>+40 774 958 379
-			</div>
+			</a>
 		</div>
 	</main>
 </Layout>

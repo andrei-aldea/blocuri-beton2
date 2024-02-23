@@ -1,7 +1,56 @@
 ---
+import { Image } from 'astro:assets'
+import photo_1 from '../images/1.jpeg'
+import photo_2 from '../images/2.jpeg'
+import photo_3 from '../images/3.jpeg'
+import photo_4 from '../images/4.jpeg'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title='Blocuri Beton | Galerie'>
-	<main class='pt-10'></main>
+	<main class='pt-14 flex flex-col md:flex-row gap-10 md:gap-20 items-center'>
+		<section class='flex flex-col gap-4'>
+			<div class='text-4xl font-light md:text-5xl'>
+				<div class='font-bold whitespace-nowrap'>Câteva exemple&nbsp;</div> ale muncii noastre
+			</div>
+			<p class='font-light'>
+				Bun venit în galeria noastră de produse! Aici, vă invităm să explorați o selecție de imagini care ilustrează
+				munca noastră în domeniul blocurilor de beton.
+			</p>
+			<div class='flex gap-4'>
+				<button
+					class='px-4 text-white max-w-min whitespace-nowrap py-1 bg-[#CE8C64] border-2 border-[#CE8C64] rounded-lg font-medium transition-all duration-300 hover:scale-90 active:scale-90'
+				>
+					<a href='/contact/'>Cerere ofertă</a>
+				</button>
+				<button
+					class='px-4 py-1 border-2 border-neutral-900 whitespace-nowrap rounded-lg font-medium transition-all duration-300 hover:scale-90 active:scale-90'
+				>
+					<a href='tel:123-456-7890'>Apelează-ne</a></button
+				>
+			</div>
+		</section>
+		<aside class='grid sm:grid-cols-2 gap-6 md:gap-3'>
+			<Image
+				src={photo_3}
+				alt='Example Image'
+				class='object-cover h-48 rounded-2xl shadow-lg shadow-neutral-400'
+			/>
+			<Image
+				src={photo_2}
+				alt='Example Image'
+				class='object-cover h-48 rounded-2xl shadow-lg shadow-neutral-400'
+			/>
+			<Image
+				src={photo_1}
+				alt='Example Image'
+				class='object-cover h-48 rounded-2xl shadow-lg shadow-neutral-400'
+			/>
+			<Image
+				src={photo_4}
+				alt='Example Image'
+				class='object-cover h-48 rounded-2xl shadow-lg shadow-neutral-400'
+			/>
+		</aside>
+	</main>
 </Layout>
