@@ -1,0 +1,15 @@
+<div
+	id='map'
+	class='h-56 rounded-2xl mt-8 shadow-xl'
+>
+</div>
+<script>
+	mapboxgl.accessToken =
+		'pk.eyJ1IjoiYW5kcmVpYWxkZWEiLCJhIjoiY2xzYzl1bXluMGlzdDJpbzZpc2wxeGc4dyJ9.zfA3dEC0FD-hwjXU1zLh4A'
+	const map = new mapboxgl.Map({
+		container: 'map', //
+		style: 'mapbox://styles/mapbox/streets-v12',
+		center: [28.64994, 44.179249],
+		zoom: 9
+	})
+</script>

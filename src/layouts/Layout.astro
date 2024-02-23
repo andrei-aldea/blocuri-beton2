@@ -2,25 +2,46 @@
 const { title = 'Blocuri Beton' } = Astro.props
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import Map from '../components/Map.astro'
 ---
 
 <!doctype html>
 <html lang='en'>
 	<head>
 		<meta charset='UTF-8' />
-		<meta name='generator' content={Astro.generator} />
-		<meta name='viewport' content='width=device-width' />
+		<meta
+			name='generator'
+			content={Astro.generator}
+		/>
+		<meta
+			name='viewport'
+			content='width=device-width'
+		/>
 		<meta
 			name='description'
 			content='O soluție simplă, funcțională și adaptabilă pentru construcțiile modulare flexibile temporare sau permanente.'
 		/>
-		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-		<meta name='keywords' content='Blocuri, Beton, Blocuri intercalabile' />
+		<link
+			rel='icon'
+			type='image/svg+xml'
+			href='/favicon.svg'
+		/>
+		<meta
+			name='keywords'
+			content='Blocuri, Beton, Blocuri intercalabile'
+		/>
 		<title>{title}</title>
+
+		<script src='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js'></script>
+		<link
+			href='https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css'
+			rel='stylesheet'
+		/>
 	</head>
 	<body class='min-w-[22rem] max-w-6xl mx-auto flex flex-col p-12 select-none'>
 		<Header />
 		<slot />
+		<Map />
 		<Footer />
 	</body>
 </html>
